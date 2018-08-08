@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Toggle from './Components/Toggle';
+import ToggleRenderProp from './Components/ToggleRenderProp';
 import './App.css';
 
 class App extends Component {
@@ -12,8 +13,18 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Toggle>
-          <h1>ERROOOOR</h1>
+          <h1>BASIC TOGGLE</h1>
         </Toggle>
+        <ToggleRenderProp
+          render={({ on, message, toggle }) => (
+            <div>
+              <button className=" mdc-button mdc-button--raised" onClick={on}>
+                RenderPropToggle
+              </button>
+              <h1>{toggle && message}</h1>
+            </div>
+          )}
+        />
       </div>
     );
   }
