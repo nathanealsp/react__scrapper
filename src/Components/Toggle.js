@@ -12,7 +12,7 @@ class Toggle extends Component {
     return (
       <div>
         <button className=" mdc-button mdc-button--raised" onClick={this.handleToggle}>
-          show/hide
+          Toggle
         </button>
         {this.state.toggle && this.props.children}
       </div>
