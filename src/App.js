@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import Toggle from './Components/Toggle';
 import ToggleRenderProp from './Components/ToggleRenderProp';
 import Nathan from './Components/Context';
+
+import Portal from './Components/Portals';
 import './App.css';
 
 class App extends Component {
@@ -28,6 +30,9 @@ class App extends Component {
         />
         <Toggle name="Context">
           <h1>{<Nathan />}</h1>
+        </Toggle>
+        <Toggle name="Portal">
+          <h1>{<Portal />}</h1>
         </Toggle>
       </div>
     );
