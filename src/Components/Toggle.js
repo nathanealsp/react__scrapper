@@ -9,10 +9,11 @@ class Toggle extends Component {
     this.setState({ toggle: !this.state.toggle });
   };
   render() {
+    const label = this.props.name;
     return (
       <div>
         <button className=" mdc-button mdc-button--raised" onClick={this.handleToggle}>
-          Toggle
+          {label || 'Toggle'}
         </button>
         {this.state.toggle && this.props.children}
       </div>
