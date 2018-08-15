@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material/button": "^0.38.0",
+    "@material/card": "^0.38.0",
     "@material/dialog": "^0.38.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
