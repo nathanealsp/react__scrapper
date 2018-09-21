@@ -5,9 +5,13 @@ import React, { Component } from 'react';
 // import Nathan from './Components/Context';
 // import Portal from './Components/Portals';
 import ToggleRevisted from './Components/ToggleRevisted';
+import ToggleRenderPropRevisted from './Components/ToggleRenderPropRevisted';
 import './App.css';
 
 class App extends Component {
+  state = {
+    name: 'Nathaneals',
+  };
   render() {
     return (
       <div className="App">
@@ -34,6 +38,22 @@ class App extends Component {
         <ToggleRevisted>
           <h1>Revisted Toggle</h1>
         </ToggleRevisted>
+        <h1>Hetttyetry</h1>
+        <ToggleRenderPropRevisted
+          client={value => {
+            console.log(value);
+            const { greeting, handleClick, on } = value;
+            console.log(on);
+            return (
+              <div>
+                {on && <h1>{greeting}</h1>}
+                <button className="mdc-button" onClick={handleClick}>
+                  TOGGLE
+                </button>
+              </div>
+            );
+          }}
+        />
       </div>
     );
   }

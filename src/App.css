@@ -26,10 +26,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+/*
 button {
   margin: 10px;
-}
+} */
 
 
 .modal-window {
@@ -48,12 +48,13 @@ button {
   text-align: center;
 }
 
-.my-card {
+/* .my-card {
   height: 350px;
   width: 350px;
-  color:red;
+  color: red;
 }
 
+*/
 /* .my-card__media {
   background-image: url("https://images.pexels.com/photos/979599/pexels-photo-979599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 } */
