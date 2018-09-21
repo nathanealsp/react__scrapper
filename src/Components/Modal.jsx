@@ -3,22 +3,23 @@ import React, { Component } from 'react';
 export default class Modal extends Component {
   render() {
     return (
-      <div className="md_modalx">
-        <div className="mdc-card my-card mdc-card__actions">
-          {/* <div className="mdc-card__media-content">{this.props.title}</div>x */}
-          <div className="mdc-card__media-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis adipisci ratione
-            maxime eveniet deleniti aliquid provident. Ad, reprehenderit sint, quaerat aut inventore
-            accusamus officiis debitis porro, consequatur quo cupiditate dolorem.
+      <div className="md_modalx title">
+        <div className="mdc-card ">
+          <div className="mdc-card__media title">{this.props.title}</div>
+          <div className="title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam deleniti, ducimus modi
+            iure molestias perferendis commodi numquam corrupti alias facilis. Voluptatem ipsam,
+            tempora deserunt quam excepturi dolorum eveniet dolorem quis!
           </div>
-          <div className="mdc-card__action-buttons">
-            {/* <button className="mdc-button mdc-card__action mdc-card__action--button">Read</button> */}
+          {/* <div className="mdc-card__actions"> */}
+          <div className="mdc-card__action-icons mdc-card__actions">
             <button
               onClick={this.props.handle}
               className="mdc-button mdc-card__action mdc-card__action--button"
             >
               Close
             </button>
+            {/* </div> */}
           </div>
         </div>
       </div>
