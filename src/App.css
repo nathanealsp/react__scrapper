@@ -99,3 +99,8 @@ button {
 /* .my-card__media {
   background-image: url("https://images.pexels.com/photos/979599/pexels-photo-979599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 } */
+
+.bas {
+  width: 100%;
+  background: #222;
+}

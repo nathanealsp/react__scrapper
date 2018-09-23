@@ -17,7 +17,9 @@ class App extends Component {
               <div>
                 {on && (
                   <Portal>
-                    <Modal title={greeting} handle={handleClick} />
+                    <div className="bas">
+                      <Modal title={greeting} handle={handleClick} />
+                    </div>
                   </Portal>
                 )}
                 <button
