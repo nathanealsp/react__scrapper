@@ -20,7 +20,7 @@ export default class ToggleRenderPropRevisted extends Component {
       <div>
         {client({
           on: this.state.on,
-          greeting: 'RenderPropRevisted',
+          greeting: 'FRONT END',
           handleClick: this.handleToggle,
         })}
       </div>

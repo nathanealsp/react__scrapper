@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
 .App {
   text-align: center;
 }
@@ -30,11 +35,6 @@
     transform: rotate(360deg);
   }
 }
-
-/*
-button {
-  margin: 10px;
-} */
 
 .modal-window {
   width: 300px;
@@ -70,37 +70,50 @@ button {
   place-content: center;
 }
 
-.md_modalx {
-  width: 350px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 5px;
-  background: #ffffff;
-  color: #333333;
-  font-size: 25px;
-  font-weight: bold;
-  height: 20vh;
-}
-
-.title {
-  padding: 8px;
-}
-
-/* .my-card {
-  height: 350px;
-  width: 350px;
-  color: red;
-}
-
-*/
-
-/* .my-card__media {
-  background-image: url("https://images.pexels.com/photos/979599/pexels-photo-979599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-} */
-
-.bas {
+.modal_header {
+  padding: 10px;
+  position: fixed;
   width: 100%;
-  background: #222;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+
+.modal_title {
+  font-size: 20px;
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+}
+
+.modal_body {
+  margin-top: 50px;
+  font-size: .8em;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.4em;
+  padding: 10px;
+  height: 45vh;
+  overflow: scroll;
+}
+
+.close {
+  border: none;
+  background: none;
+  font-size: inherit;
+  padding: 5px 5px 5px 10px;
+  color: #bdbdbd;
+  cursor: pointer;
+  outline: none;
+}
+
+.close:active {
+  border: none;
+  background: none;
+}
+
+.close:hover {
+  color: #212121;
 }
