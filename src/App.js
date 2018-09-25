@@ -7,8 +7,8 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1 className="App-title">ADVANCED REACT CONCEPTS</h1>
+      <div className="app">
+        <h1 className="app-title">ADVANCED REACT CONCEPTS</h1>
         {/* RENDER PROPS */}
         <ToggleRenderPropRevisted
           client={value => {
