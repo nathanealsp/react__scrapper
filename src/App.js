@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Portal from './Components/Portal';
 import Modal from './Components/Modal';
 import ToggleRenderPropRevisted from './Components/ToggleRenderPropRevisted';
+import ContextConsumer from './Components/Context';
 import './App.css';
 
 class App extends Component {
@@ -28,6 +29,8 @@ class App extends Component {
                 >
                   TOGGLE
                 </button>
+                <h1>Context </h1>
+                <ContextConsumer />
               </div>
             );
           }}

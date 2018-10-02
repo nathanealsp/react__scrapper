@@ -1,47 +1,26 @@
 import React, { Component } from 'react';
 
-const MyProvider = React.createContext();
-
+const MyContext = React.createContext();
 class Context extends Component {
   state = {
-    name: 'Nathaneals',
-    age: 99,
-    job: 'Developer',
+    name: 'Nathaneals ',
+    job: 'Senior UI developer',
   };
   render() {
+    console.log(this);
+    return <MyContext.Provider value={this.state.name}>{this.props.children}</MyContext.Provider>;
+  }
+}
+
+class ContextConsumer extends Component {
+  render() {
+    console.log(this);
     return (
-      <div>
-        <MyProvider.Provider
-          value={{
-            state: this.state,
-          }}
-        >
-          {this.props.children}
-        </MyProvider.Provider>
-      </div>
+      <Context>
+        <MyContext.Consumer>{value => <div>{value}</div>}</MyContext.Consumer>
+      </Context>
     );
   }
 }
 
-export default class Nathan extends Component {
-  render() {
-    return (
-      <div>
-        <Context>
-          <MyProvider.Consumer>
-            {value => {
-              const { name, age, job } = value.state;
-              return (
-                <div>
-                  <p>{name}</p>
-                  <p>{age}</p>
-                  <p>{job}</p>
-                </div>
-              );
-            }}
-          </MyProvider.Consumer>
-        </Context>
-      </div>
-    );
-  }
-}
+export default ContextConsumer;
