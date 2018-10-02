@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Portal from './Components/Portal';
 import Modal from './Components/Modal';
 import ToggleRenderPropRevisted from './Components/ToggleRenderPropRevisted';
-import ContextConsumer from './Components/Context';
+import Prod from './Components/Context';
+import OtherModal from './OtherModal';
+
 import './App.css';
 
 class App extends Component {
@@ -29,12 +31,15 @@ class App extends Component {
                 >
                   TOGGLE
                 </button>
+
                 <h1>Context </h1>
-                <ContextConsumer />
+
+                <Prod />
               </div>
             );
           }}
         />
+        <OtherModal />
       </div>
     );
   }
