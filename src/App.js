@@ -3,7 +3,7 @@ import Portal from './Components/Portal';
 import Modal from './Components/Modal';
 import ToggleRenderPropRevisted from './Components/ToggleRenderPropRevisted';
 import Prod from './Components/Context';
-import OtherModal from './OtherModal';
+import OtherModal from './Components/OtherModal';
 
 import './App.css';
 

@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Krub|Rubik|Work+Sans');
 * {
-  font-family: 'Fira Sans', sans-serif;
+  /* font-family: 'Work Sans', sans-serif;
+  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Krub', sans-serif;
+  font-family: 'Rubik', sans-serif; */
+  font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   /* border: 1px solid red; */
+  font-size: 16px;
 }
 
 .app {
   text-align: center;
+}
+
+.app-title {
+  font-family: 'Rubik', sans-serif;
+  /* font-family: 'Krub', sans-serif; */
+  font-size: 3em;
 }
 
 .modal-window {
