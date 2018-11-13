@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-// import Portal from './Components/Portal';
-// import Modal from './Components/Modal';
-// import ToggleRenderPropRevisted from './Components/ToggleRenderPropRevisted';
-// import Prod from './Components/Context';
-// import OtherModal from './Components/OtherModal';
-
-import { Portal, Modal, ToggleRenderPropRevisted, Prod, OtherModal } from 'Components'
+import { Portal, Modal, ToggleRenderPropRevisted, Prod, OtherModal } from 'Components';
 
 import './App.css';
 

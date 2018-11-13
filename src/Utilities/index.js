@@ -1,4 +1,5 @@
-import Modal from './Modal'
-import Background from './BackGround'
+import ModalStyles from './Modal';
+import Background from './BackGround';
+import AppWrapper from './AppWrapper';
 
-export { Modal, Background }
+export { ModalStyles, Background, AppWrapper };

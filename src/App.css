@@ -10,7 +10,7 @@
 }
 
 .app-title {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .modal-window {
@@ -66,14 +66,14 @@
 
 .modal_body {
   margin-top: 50px;
-  font-size: .6em;
+  font-size: 0.6em;
   font-weight: 400;
   text-align: left;
   line-height: 1.4em;
   padding: 20px;
   height: 40vh;
   overflow: scroll;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 
 .close {
