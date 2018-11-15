@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Portal, Modal, ToggleRenderPropRevisted, Prod, OtherModal } from 'Components';
+import LoginPage from './Components/LoginPage';
 
 import './App.css';
 
@@ -36,6 +37,7 @@ class App extends Component {
           }}
         />
         <OtherModal />
+        <LoginPage />
       </div>
     );
   }
