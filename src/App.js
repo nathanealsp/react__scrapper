@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Portal, Modal, ToggleRenderPropRevisted, Prod, OtherModal } from 'Components';
 import LoginPage from './Components/LoginPage';
-
+import AutoComplete from './Components/AutoComplete';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1 className="app-title">ADVANCED REACT CONCEPTS</h1>
-        {/* RENDER PROPS */}
+        {/* <h1 className="app-title">ADVANCED REACT CONCEPTS</h1>
         <ToggleRenderPropRevisted
           client={value => {
             const { greeting, handleClick, on } = value;
@@ -37,7 +36,23 @@ class App extends Component {
           }}
         />
         <OtherModal />
-        <LoginPage />
+        <LoginPage /> */}
+        <h1>React Autocomplete Demo</h1>
+        <h2>Start typing and experience the autocomplete wizardry!</h2>
+        <AutoComplete
+          suggestions={[
+            'Alligator',
+            'Bask',
+            'Crocodilian',
+            'Death Roll',
+            'Eggs',
+            'Jaws',
+            'Reptile',
+            'Solitary',
+            'Tail',
+            'Wetlands',
+          ]}
+        />
       </div>
     );
   }
