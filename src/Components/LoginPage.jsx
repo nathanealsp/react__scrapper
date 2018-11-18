@@ -5,7 +5,7 @@ import logo from '../Utilities/logo.svg';
 export default class LoginPage extends Component {
   render() {
     return (
-      <div className="steam-signup-form">
+      <Wrapper className="steam-signup-form">
         <div className="front">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="title">Create your account</h1>
@@ -75,7 +75,45 @@ export default class LoginPage extends Component {
             <li>Receive automatic game updates, and more!</li>
           </ul>
         </div>
-      </div>
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  img {
+    height: 50px;
+  }
+
+  .front {
+    background: var(--clr-2);
+    width: 450px;
+    height: 70vh;
+    padding: 20px;
+  }
+
+  .form__text {
+    background: pink;
+    height: 36px;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    margin: 10px 0;
+  }
+
+  .back {
+    background: red;
+  }
+
+  button {
+    all: unset;
+    line-height: 36px;
+    padding: 0 20px;
+    background: green;
+    border-radius: 3px;
+  }
+`;
