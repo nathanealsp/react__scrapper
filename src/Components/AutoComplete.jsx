@@ -19,6 +19,7 @@ class AutoComplete extends Component {
       // What the user has entered
       userInput: '',
       showMe: false,
+      active: false,
     };
   }
 
@@ -32,6 +33,10 @@ class AutoComplete extends Component {
       suggestion => suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
 
+    if (e.currentTarget.value.length === 0) {
+      this.setState({ showMe: false });
+    }
+
     // Update the user input and filtered suggestions, reset the active
     // suggestion and make sure the suggestions are shown
     this.setState({
@@ -39,17 +44,18 @@ class AutoComplete extends Component {
       filteredSuggestions,
       showSuggestions: true,
       userInput: e.currentTarget.value,
+      active: true,
     });
   };
 
-  onclickTwo = e => {
-    console.log(e);
+  onclickTwo = () => {
     const { suggestions } = this.props;
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions: suggestions,
       showSuggestions: true,
-      showMe: true,
+      showMe: !this.state.showMe,
+      active: true,
     });
   };
 
@@ -61,13 +67,14 @@ class AutoComplete extends Component {
       filteredSuggestions: [],
       showSuggestions: false,
       userInput: e.currentTarget.innerText,
+      active: false,
     });
   };
 
   // Event fired when the user presses a key down
   onKeyDown = e => {
     const { activeSuggestion, filteredSuggestions } = this.state;
-
+    console.log(e.keyCode);
     // User pressed the enter key, update the input and close the
     // suggestions
     if (e.keyCode === 13) {
@@ -76,6 +83,7 @@ class AutoComplete extends Component {
         showSuggestions: false,
         userInput: filteredSuggestions[activeSuggestion],
         showMe: false,
+        active: false,
       });
     }
     // User pressed the up arrow, decrement the index
@@ -96,13 +104,26 @@ class AutoComplete extends Component {
     }
   };
 
+  handleFocus = () => {
+    this.setState({
+      active: true,
+    });
+  };
+
+  // handlePointer = () => {
+  //   console.log('Pointer Out');
+  //   this.setState({
+  //     active: false,
+  //   });
+  // };
+
   render() {
     const {
       onChange,
       onClick,
       onKeyDown,
       onclickTwo,
-      state: { activeSuggestion, filteredSuggestions, showSuggestions, userInput, showMe },
+      state: { activeSuggestion, filteredSuggestions, showSuggestions, userInput, showMe, active },
     } = this;
     console.log(userInput);
     let suggestionsListComponent;
@@ -110,7 +131,7 @@ class AutoComplete extends Component {
     if ((showSuggestions && userInput) || showMe) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <ul className="suggestions">
+          <ul className={filteredSuggestions.length > 5 ? 'suggestionsPlus' : 'suggestions'}>
             {filteredSuggestions.map((suggestion, index) => {
               let className;
 
@@ -127,26 +148,33 @@ class AutoComplete extends Component {
             })}
           </ul>
         );
-      } else {
-        suggestionsListComponent = (
-          <div className="no-suggestions">
-            <em>No suggestions, you're on your own!</em>
-          </div>
-        );
       }
+      // else {
+      //   suggestionsListComponent = (
+      //     <div className="no-suggestions">
+      //       <em>No suggestions, you're on your own!</em>
+      //     </div>
+      //   );
+      // }
     }
 
     return (
       <Fragment>
         <Wrapper>
-          <input
-            type="text"
-            onChange={onChange}
-            onKeyDown={onKeyDown}
-            value={userInput}
-            onClick={onclickTwo}
-          />
-          {suggestionsListComponent}
+          <div className={active ? 'actived' : null} onMouseLeave={this.handlePointer} on>
+            <input
+              type="text"
+              onChange={onChange}
+              onKeyDown={onKeyDown}
+              value={userInput}
+              onClick={onclickTwo}
+              placeholder="Search for input.."
+              onFocus={this.handleFocus}
+              on
+            />
+
+            {suggestionsListComponent}
+          </div>
         </Wrapper>
       </Fragment>
     );
@@ -156,24 +184,50 @@ class AutoComplete extends Component {
 export default AutoComplete;
 
 const Wrapper = styled.div`
+  .actived {
+    border: 2px solid rgb(81, 128, 202);
+    border-radius: 3px;
+  }
   margin: 50px auto;
-  border: 2px solid #0079bf;
-  border-radius: 3px;
   width: 350px;
   text-align: left;
+  font-size: 14px;
   input[type='text'] {
-    height: 36px;
+    line-height: 32px;
     width: 100%;
     outline: none;
     border: none;
     padding-left: 8px;
+    background: #f8f9f9;
+    border-radius: 3px;
   }
 
   .suggestions {
+  }
+
+  ul {
     list-style: none;
     background: #f8f9f9;
-    max-height: 143px;
+  }
+
+  .suggestionsPlus {
+    height: 150px;
     overflow-y: auto;
+    :: -webkit-scrollbar {
+      width: 9px;
+    }
+    /* Track */
+    :: -webkit-scrollbar-track {
+      background: #d9d8da;
+    }
+    /* Handle */
+    :: -webkit-scrollbar-thumb {
+      background: rgb(0, 44, 106);
+    }
+    /* Handle on hover */
+    :: -webkit-scrollbar-thumb: hover {
+      background: rgb(0, 44, 106);
+    }
   }
 
   li {
