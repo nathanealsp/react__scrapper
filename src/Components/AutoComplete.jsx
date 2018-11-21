@@ -161,7 +161,7 @@ class AutoComplete extends Component {
     return (
       <Fragment>
         <Wrapper>
-          <div className={active ? 'actived' : null} onMouseLeave={this.handlePointer} on>
+          <div className={active ? 'actived' : null} onMouseLeave={this.handlePointer}>
             <input
               type="text"
               onChange={onChange}
@@ -170,7 +170,6 @@ class AutoComplete extends Component {
               onClick={onclickTwo}
               placeholder="Search for input.."
               onFocus={this.handleFocus}
-              on
             />
 
             {suggestionsListComponent}
